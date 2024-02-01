@@ -10,7 +10,4 @@ class PageController extends Controller
         $titolo = "IL BLOG DI MAICOL";
         return view('homepage', ['titolo'=>$titolo]);
     }
-    public function contatti(){
-        return view('contatti');
-    }
 }

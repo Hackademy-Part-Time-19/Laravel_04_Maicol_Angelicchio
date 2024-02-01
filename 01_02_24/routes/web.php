@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ Route::get('/', function () {
 
 Route::get('/', [PageController::class, 'homepage'])->name('home');
 
-Route::get('/chi-sono', [PageController::class, 'contatti'])->name('contatti');
+Route::get('/chi-sono', [ContactController::class, 'visualizzaPagina'])->name('contatti');
+
+Route::post('/chi-sono', [ContactController::class, 'elaboraDati'])->name('contatti');
 
 Route::get('/articoli', [ArticleController::class, 'articoli'])->name('articoli');
 
