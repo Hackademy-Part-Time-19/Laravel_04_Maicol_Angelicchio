@@ -11,7 +11,7 @@
         <form action="{{ route('contatti')}}" method="post">
             @csrf
             <div class="mb-3">
-                <label for="nome" class="form-label">Nome:</label>
+                <label for="name" class="form-label">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" required>
             </div>
             <div class="mb-3">
@@ -19,8 +19,8 @@
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="mb-3">
-                <label for="messaggio" class="form-label">Messaggio:</label>
-                <textarea class="form-control" id="messaggio" name="messaggio" rows="4" required></textarea>
+                <label for="message" class="form-label">Messaggio:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Invia Richiesta</button>
         </form>
