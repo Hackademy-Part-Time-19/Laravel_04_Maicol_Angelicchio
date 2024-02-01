@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 
 class ContactController extends Controller
 {
@@ -15,6 +17,6 @@ class ContactController extends Controller
 
         Mail::to('maicol@gmail.com')->send(new ContactMail($data['name'], $data['email'], $data['message']));
 
-        return redirect()->route('contatti')->with('success', 'il form è stato inviato correttamente');
+        return redirect()->route('contatti')->with('success', 'Il form è stato inviato correttamente');
     }
 }
