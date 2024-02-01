@@ -15,8 +15,12 @@ class ContactController extends Controller
     public function elaboraDati(Request $request){
         $data = $request->all();
 
-        Mail::to('maicol@gmail.com')->send(new ContactMail($data['name'], $data['email'], $data['message']));
-
-        return redirect()->route('contatti')->with('success', 'Il form è stato inviato correttamente');
+        if($data['name']==""||$data['email']==""||$data['message']==""){
+            return redirect()->route('contatti')->with('error', 'Compilare tutti i campi del form');
+        }
+        else{
+            Mail::to('maicol@gmail.com')->send(new ContactMail($data['name'], $data['email'], $data['message']));
+            return redirect()->route('contatti')->with('success', 'Il form è stato inviato correttamente');
+        }
     }
 }

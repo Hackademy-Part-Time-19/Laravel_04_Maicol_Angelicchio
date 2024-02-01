@@ -4,6 +4,8 @@
 
     @if(session()->has('success'))
         <x-success-message/>
+    @elseif(session()->has('error'))
+        <x-error-message/>
     @endif
 
     <div class="container mt-5">
@@ -12,15 +14,15 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" name="name">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email">
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Messaggio:</label>
-                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="4"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Invia Richiesta</button>
         </form>
